@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibrahim ❤️ Aya</title>
+
+<style>
+body{
+margin:0;
+font-family:Tahoma,sans-serif;
+background:linear-gradient(135deg,#111,#ff4d6d);
+color:white;
+text-align:center;
+}
+
+h1{
+font-size:48px;
+margin-top:30px;
+}
+
+h2{
+font-size:30px;
+}
+
+#timer{
+font-size:28px;
+margin:25px;
+line-height:1.8;
+}
+
+#slide{
+width:90%;
+max-width:700px;
+border-radius:20px;
+box-shadow:0 0 20px pink;
+}
+
+button{
+margin-top:20px;
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:15px;
+background:white;
+color:#ff4d6d;
+}
+
+footer{
+margin:40px;
+font-size:28px;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Ibrahim ❤️ Aya</h1>
+<h1 style="font-size:55px;color:white;margin-top:25px;">
+Ibrahim ❤️ Aya
+</h1>
+<h2>مع بعض من 07/08/2024</h2>
+
+<div id="timer"></div>
+
+<img id="slide" src="1.jpg">
+
+<br>
+
+<button onclick="document.getElementById('music').play()">🎵 تشغيل الأغنية</button>
+
+<audio id="music">
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<footer>
+❤️ Forever Together ❤️
+</footer>
+
+<script>
+
+const start=new Date("2024-08-07");
+
+function update(){
+
+let now=new Date();
+
+let diff=now-start;
+
+let days=Math.floor(diff/86400000);
+let hours=Math.floor((diff%86400000)/3600000);
+let minutes=Math.floor((diff%3600000)/60000);
+let seconds=Math.floor((diff%60000)/1000);
+
+document.getElementById("timer").innerHTML=
+days+" يوم ❤️ "+
+hours+" ساعة ❤️ "+
+minutes+" دقيقة ❤️ "+
+seconds+" ثانية";
+
+}
+
+update();
+setInterval(update,1000);
+
+const images=[
+"1.jpg",
+"2.jpg",
+"3.jpg",
+"4.jpg",
+"5.jpg",
+"6.jpg",
+"7.jpg",
+"8.jpg"
+];
+
+let i=0;
+
+setInterval(function(){
+
+i=(i+1)%images.length;
+document.getElementById("slide").src=images[i];
+
+},3000);
+
+</script>
+
+</body>
+</html>
